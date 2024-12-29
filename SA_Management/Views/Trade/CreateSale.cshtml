@@ -1,0 +1,175 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model CreateSaleTradeViewModel
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Layout collapsed menu</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="breadcrumb-item"><a a asp-controller="Trade" asp-action="Index">Trade</a>
+                                </li>
+                                <li class="breadcrumb-item active">Add Sale
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
+                <div class="mb-1 breadcrumb-right">
+                    <div class="dropdown">
+                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
+                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="app-todo.html"><i class="me-1" data-feather="check-square"></i><span class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i class="me-1" data-feather="message-square"></i><span class="align-middle">Chat</span></a><a class="dropdown-item" href="app-email.html"><i class="me-1" data-feather="mail"></i><span class="align-middle">Email</span></a><a class="dropdown-item" href="app-calendar.html"><i class="me-1" data-feather="calendar"></i><span class="align-middle">Calendar</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Multiple Column</h4>
+                            </div>
+                            <div class="card-body">
+                                <form class="form" asp-controller="Trade" asp-action="CreateSale" method="post">
+                                    <div class="row">
+                                        <div class="col-md-5 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="Trade.TradeDate">Date & TIme</label>
+                                                <input type="text" id="fp-date-time" asp-for="Trade.TradeDate" class="form-control flatpickr-date-time" placeholder="YYYY-MM-DD HH:MM" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="Trade.CompanyID"></label>
+                                                <select class="select2-size-lg form-select" asp-for="Trade.CompanyID" id="tradeCompany" asp-items="Model.ShareCompanies">
+                                                    <option >Select Share Company</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-12">
+                                            <div class="form-check form-switch mt-2">
+                                                <input type="checkbox"  class="form-check-input" asp-for="Trade.IsBrokerEngaged" id="isBrokerEngaged" />
+                                                <label class="form-label" asp-for="Trade.IsBrokerEngaged">Broker</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="Trade.TradeNature"></label>
+                                                <select class="select2-size-lg form-select" asp-for="Trade.TradeNature" id="tradeNature">
+                                                    <option selected disabled>Select Trade Nature</option>
+                                                    <option value="fut">FUT</option>
+                                                    <option value="reg">REG</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="AvailableQuantity"></label>
+                                                <input type="text" readonly asp-for="AvailableQuantity" id="availableQuantity" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="AvgPrice"></label>
+                                                <input type="text" readonly id="avgPrice" asp-for="AvgPrice" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="Trade.Quantity"></label>
+                                                <input type="text" asp-for="Trade.Quantity" id="tradeQuantity" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="Trade.TradePrice"></label>
+                                                <input type="text" id="tradePrice" asp-for="Trade.TradePrice" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label" asp-for="Trade.TotalAmount"></label>
+                                                <input type="text" id="tradeTotalAmount" readonly class="form-control-plaintext" asp-for="Trade.TotalAmount" value="0"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>         
+</div>     
+         
+<script>
+    // Calculate total amount when quantity or price changes
+    document.getElementById('tradeQuantity').addEventListener('input', calculateTotal);
+    document.getElementById('tradePrice').addEventListener('input', calculateTotal);
+    //Make AJAX call to get the company portfolio 
+    document.getElementById('tradeCompany').addEventListener('change', fetchPortfolio);
+    document.getElementById('tradeNature').addEventListener('change', fetchPortfolio);
+    document.getElementById('isBrokerEngaged').addEventListener('change', fetchPortfolio);
+
+    function calculateTotal() {
+        var quantity = parseFloat(document.getElementById('tradeQuantity').value);
+        var price = parseFloat(document.getElementById('tradePrice').value);
+        
+        if (!isNaN(quantity) && !isNaN(price)) {
+            var total = quantity * price;
+            document.getElementById('tradeTotalAmount').value = total.toFixed(2);
+        } else {
+            document.getElementById('tradeTotalAmount').value = ''; // Clear if inputs are invalid
+        }
+    }
+    function fetchPortfolio() {
+        let companyId = document.getElementById("tradeCompany").value;
+        let isBrokerEngaged = document.getElementById("isBrokerEngaged").checked;
+        let shareNature = document.getElementById("tradeNature").value; // Get nature of shares (REG or FUT)
+
+        if (companyId != "Select Share Company" && shareNature != "Select Trade Nature")
+        {
+            console.log(companyId, shareNature, isBrokerEngaged);
+            // Build the URL with the company ID, broker status, and share nature
+            let url = `/api/portfolio/${companyId}?nature=${shareNature}`;
+
+            // If the broker is engaged, add the broker parameter
+            if (isBrokerEngaged) {
+                url += "&isBrokerEngaged=true";
+            }
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Populate the portfolio section with data
+                    document.getElementById("availableQuantity").value = data.availableShares;
+                    document.getElementById("avgPrice").value = data.averagePrice;
+                })
+                .catch(error => {
+                    console.error('Error fetching portfolio data:', error);
+                });
+        } else {
+            // Hide portfolio info if no company or nature is selected
+            document.getElementById("portfolioInfo").style.display = 'none';
+        }
+    }
+</script>

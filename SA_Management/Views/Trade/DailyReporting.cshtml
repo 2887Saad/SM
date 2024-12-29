@@ -1,0 +1,183 @@
+@{
+    ViewData["Title"] = "List of Trades";
+}
+@model IList<Trade>
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Trades</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active">Trades
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
+                <div class="mb-1 breadcrumb-right">
+                    <div class="dropdown">
+                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
+                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="app-todo.html"><i class="me-1" data-feather="check-square"></i><span class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i class="me-1" data-feather="message-square"></i><span class="align-middle">Chat</span></a><a class="dropdown-item" href="app-email.html"><i class="me-1" data-feather="mail"></i><span class="align-middle">Email</span></a><a class="dropdown-item" href="app-calendar.html"><i class="me-1" data-feather="calendar"></i><span class="align-middle">Calendar</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <section id="multiple-column-form">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Daily Report</h4>
+                            </div>
+                            <div class="card-body">
+                                <form asp-controller="Trade" asp-action="DailyReporting" method="post" class="form form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-5 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label">Date & TIme</label>
+                                                <input type="text" id="fp-default" class="form-control flatpickr-basic" placeholder="YYYY-MM-DD" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label">Company</label>
+                                                <select class="select2-size-lg form-select" name="companyId" id="tradeCompany">
+                                                   <Option selected disabled>Select Share Company</Option> 
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-12">
+                                            <div class="form-check form-switch mt-2">
+                                                <input type="checkbox"  class="form-check-input" name="isBrokerEngaged" id="customSwitch1" />
+                                                <label class="form-label">Broker</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label">Trade Nature</label>
+                                                <select class="select2-size-lg form-select" name="tradeNature" id="large-select">
+                                                    <option selected disabled>Select Trade Nature</option>
+                                                    <option value="fut">FUT</option>
+                                                    <option value="reg">REG</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <div class="mb-1">
+                                                <label class="form-label">Trade Type </label>
+                                                <select class="select2-size-lg form-select" name="tradeType" id="large-select">
+                                                    <option selected disabled>Select Trade Nature</option>
+                                                    <option value="sell">sell</option>
+                                                    <option value="buy">buy</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Responsive Datatable -->
+            <div class="row" id="table-responsive">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap">#</th>
+                                        <th scope="col" class="text-nowrap">Company</th>
+                                        <th scope="col" class="text-nowrap">Trade Date</th>
+                                        <th scope="col" class="text-nowrap">Trade Type</th>
+                                        <th scope="col" class="text-nowrap">Trade Nature</th>
+                                        <th scope="col" class="text-nowrap">Quantity</th>
+                                        <th scope="col" class="text-nowrap">Price</th>
+                                        <th scope="col" class="text-nowrap">Total Amount</th>     
+                                        <th scope="col" class="text-nowrap">Action</th>                                           
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int idx =1;
+                                    }
+                                    @foreach(var obj in Model)
+                                    { 
+                                        <tr>
+                                            <td class="text-nowrap">@idx</td>
+                                            <td class="text-nowrap">@obj.ShareCompany.CompanyName</td>
+                                            <td class="text-nowrap">@obj.TradeDate</td>
+                                            <td class="text-nowrap">@obj.TradeType</td>
+                                            <td class="text-nowrap">@obj.TradeNature</td>
+                                            <td class="text-nowrap">@obj.Quantity</td>
+                                            <td class="text-nowrap">@obj.TradePrice</td>
+                                            <td class="text-nowrap">@obj.TotalAmount</td>
+                                            <td class="text-nowrap">
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
+                                                        <i data-feather="more-vertical"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" asp-controller="Trade" asp-action="Update">
+                                                            <i data-feather="edit-2" class="me-50"></i>
+                                                            <span>Edit</span>
+                                                        </a>
+                                                        <a class="dropdown-item" asp-controller="Trade" asp-action="Delete" asp-route-TradeId="@obj.TradeID">
+                                                            <i data-feather="trash" class="me-50"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        idx++;  
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        window.onload = function() {
+            fetchItems();
+        };
+        function fetchItems() {
+            fetch("api/fetchCompanies")  // Replace '/api/items' with your actual API endpoint
+                .then(response => response.json())
+                .then(data => {
+                    populateSelect(data);
+                })
+                .catch(error => console.error('Error fetching items:', error));
+        }
+
+        function populateSelect(items) {
+            console.log(items);
+            const select = document.getElementById("tradeCompany");
+            items.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.companyID; // Assuming `id` is a property in your data
+                option.textContent = item.companyName; // Assuming `name` is a property in your data
+                select.appendChild(option);
+            });
+        }
+    </script>

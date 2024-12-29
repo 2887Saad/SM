@@ -1,0 +1,154 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/SA_Management.DataAccessLayer.csproj": {}
+  },
+  "projects": {
+    "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/SA_Management.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/SA_Management.DataAccessLayer.csproj",
+        "projectName": "SA_Management.DataAccessLayer",
+        "projectPath": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/SA_Management.DataAccessLayer.csproj",
+        "packagesPath": "/Users/muhammadsaad/.nuget/packages/",
+        "outputPath": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/muhammadsaad/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/SA_Management.Models.csproj": {
+                "projectPath": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/SA_Management.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/SA_Management.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/SA_Management.Models.csproj",
+        "projectName": "SA_Management.Models",
+        "projectPath": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/SA_Management.Models.csproj",
+        "packagesPath": "/Users/muhammadsaad/.nuget/packages/",
+        "outputPath": "/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/muhammadsaad/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

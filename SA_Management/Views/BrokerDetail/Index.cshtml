@@ -1,0 +1,161 @@
+@{
+    ViewData["Title"] = "List of Companies";
+}
+@model List<BrokerDetails>
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Broker Details</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a asp-controller="BrokerDetail" asp-action="Index">Broker</a>
+                                </li>
+                                <li class="breadcrumb-item">Broker Details
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
+                <div class="mb-1 breadcrumb-right">
+                    <div class="dropdown">
+                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
+                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="app-todo.html"><i class="me-1" data-feather="check-square"></i><span class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i class="me-1" data-feather="message-square"></i><span class="align-middle">Chat</span></a><a class="dropdown-item" href="app-email.html"><i class="me-1" data-feather="mail"></i><span class="align-middle">Email</span></a><a class="dropdown-item" href="app-calendar.html"><i class="me-1" data-feather="calendar"></i><span class="align-middle">Calendar</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Responsive Datatable -->
+            <div class="row" id="table-responsive"></div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th scope="col" class="text-nowrap">Name</th>
+                                        <th scope="col" class="text-nowrap">Percentage Cut</th>
+                                        <th scope="col" class="text-nowrap">Total Balance</th>
+                                        <th scope="col" class="text-nowrap">Is Active</th>
+                                        <th scope="col" class="text-nowrap">Action</th>                                                
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int idx =1;
+                                    }
+                                    @foreach(var obj in Model)
+                                    { 
+                                        <tr>
+                                            <td class="text-nowrap">@idx</td>
+                                            <td class="text-nowrap">@obj.Name</td>
+                                            <td class="text-nowrap">@obj.FixedPriceCut</td>
+                                            <td class="text-nowrap">@obj.TotalBalance</td>
+                                            <td class="text-nowrap">@obj.IsActive</td>
+                                            <td class="text-nowrap">
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
+                                                        <i data-feather="more-vertical"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" asp-controller="Trade" asp-action="Delete" asp-route-TradeId="">
+                                                            <i data-feather="trash" class="me-50"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        idx++;  
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            @* <section id="responsive-datatable">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-datatable">
+                                <table class="dt-responsive table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Company Name</th>
+                                            <th>Quantity</th>
+                                            <th>Average Price</th>
+                                            <th>With Broker</th>
+                                            <th>Average Price</th>
+                                            <th>Future Quantity</th>
+                                            <th>Average Price</th>
+                                            <th>With Broker</th>
+                                            <th>Average Price</th>
+                                            <th>Total Investnment</th>
+                                            <th>Sold Quantity</th>
+                                            <th>Is Active</th>
+                                            <th>Action</th>                                                
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            int idx =1;
+                                        }
+                                        @foreach(var obj in Model)
+                                        { 
+                                            <tr>
+                                                <td>@idx</td>
+                                                <td>@obj.ShareCompany.CompanyName</td>
+                                                <td>@obj.QuantityWithoutBroker</td>
+                                                <td>@obj.AveragePriceWithoutBroker</td>
+                                                <td>@obj.QuantityWithoutBroker</td>
+                                                <td>@obj.AveragePriceWithoutBroker</td>
+                                                <td>@obj.FUTQuantityWithoutBroker</td>
+                                                <td>@obj.FUTAveragePriceWithoutBroker</td>
+                                                <td>@obj.FUTQuantityWithBroker</td>
+                                                <td>@obj.FUTAveragePriceWithBroker</td>
+                                                <td>@obj.TotalInvestnment</td>
+                                                <td>@obj.SoldQuantity</td>
+                                                <td>@obj.IsActive</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" asp-controller="ShareCompany" asp-action="Update" asp-route-shareCompanyId="@obj.CompanyID">
+                                                                <i data-feather="edit-2" class="me-50"></i>
+                                                                <span>Edit</span>
+                                                            </a>
+                                                            <a class="dropdown-item" asp-controller="ShareCompany" asp-action="Delete">
+                                                                <i data-feather="trash" class="me-50"></i>
+                                                                <span>Delete</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            idx++;  
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> *@
+            <!--/ Responsive Datatable -->
+        </div>
+    </div>
+</div>

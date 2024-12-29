@@ -1,0 +1,17 @@
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.csproj.AssemblyReference.cache
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.AssemblyInfoInputs.cache
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.AssemblyInfo.cs
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.csproj.CoreCompileInputs.cache
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/bin/Debug/net8.0/SA_Management.DataAccessLayer.deps.json
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/bin/Debug/net8.0/SA_Management.DataAccessLayer.runtimeconfig.json
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/bin/Debug/net8.0/SA_Management.DataAccessLayer.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/bin/Debug/net8.0/SA_Management.DataAccessLayer.pdb
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/bin/Debug/net8.0/SA_Management.Models.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/bin/Debug/net8.0/SA_Management.Models.pdb
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Manag.9102564B.Up2Date
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/refint/SA_Management.DataAccessLayer.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.pdb
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/SA_Management.DataAccessLayer.genruntimeconfig.cache
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.DataAccessLayer/obj/Debug/net8.0/ref/SA_Management.DataAccessLayer.dll

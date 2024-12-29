@@ -1,0 +1,11 @@
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/bin/Debug/net8.0/SA_Management.Models.deps.json
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/bin/Debug/net8.0/SA_Management.Models.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/bin/Debug/net8.0/SA_Management.Models.pdb
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/SA_Management.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/SA_Management.Models.AssemblyInfoInputs.cache
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/SA_Management.Models.AssemblyInfo.cs
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/SA_Management.Models.csproj.CoreCompileInputs.cache
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/SA_Management.Models.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/refint/SA_Management.Models.dll
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/SA_Management.Models.pdb
+/Users/muhammadsaad/ASP.NETCORE/SM/SA_Management.Models/obj/Debug/net8.0/ref/SA_Management.Models.dll
